@@ -1,0 +1,27 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+:root {
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Thin scrollbar for color scroll strip */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
