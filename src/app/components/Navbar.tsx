@@ -95,6 +95,16 @@ export function Navbar() {
             >
               Picker
             </Link>
+            <Link
+              to="/color-wheel"
+              className={`px-4 py-2 rounded-lg text-sm transition-colors ${
+                isActive("/color-wheel")
+                  ? "bg-gray-100 text-gray-900"
+                  : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+              }`}
+            >
+              Color Wheel
+            </Link>
           </div>
 
           {/* Search */}
@@ -151,6 +161,7 @@ export function Navbar() {
           <Link to="/" onClick={() => setMenuOpen(false)} className="px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-50">Home</Link>
           <Link to="/colors" onClick={() => setMenuOpen(false)} className="px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-50">Colors</Link>
           <Link to="/picker" onClick={() => setMenuOpen(false)} className="px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-50">Picker</Link>
+          <Link to="/color-wheel" onClick={() => setMenuOpen(false)} className="px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-50">Color Wheel</Link>
         </div>
       )}
     </nav>

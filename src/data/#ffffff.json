@@ -1,0 +1,19 @@
+[
+  {
+    "id": "fffffff",
+    "number": 1,
+    "name": "White",
+    "hex": "#FFFFFF",
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "hsl": { "h": 0, "s": 0, "l": 100 },
+    "origin": "Pure white, the ultimate achromatic color",
+    "year": "All time",
+    "category": "Grayscale",
+    "description": "Pure white - the brightest neutral color representing purity and clarity.",
+    "featured": false,
+    "isNew": false,
+    "tags": ["grayscale", "white", "neutral"]
+  }
+]

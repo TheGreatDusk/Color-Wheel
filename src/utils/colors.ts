@@ -177,4 +177,25 @@ export function findClosestColor(r: number, g: number, b: number): ColorEntry {
   return closest;
 }
 
+export async function fetchColor(hex: string): Promise<ColorEntry | null> {
+  const cleanHex = hex.replace('#', '').toLowerCase();
+  try {
+    const response = await fetch(`https://raw.githubusercontent.com/TheGreatDusk/Color-Wheel/refs/heads/main/src/data/${cleanHex}.json`);
+    if (!response.ok) return null;
+    const data = await response.json();
+    // Ensure derived values
+    const { r, g, b } = hexToRgb(data.hex);
+    const tags = Array.from(new Set((data.tags || []).map((t: string) => t.trim().toLowerCase())));
+    return {
+      ...data,
+      r, g, b,
+      hsl: hexToHsl(data.hex),
+      cmyk: hexToCmyk(data.hex),
+      tags,
+    } as ColorEntry;
+  } catch {
+    return null;
+  }
+}
+
 export { hexToHsl, hexToCmyk };
